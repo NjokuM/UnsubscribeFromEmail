@@ -1,0 +1,6 @@
+credentials.json
+__pycache__
+.env
+token.json
+token.pickle
+node_modules
