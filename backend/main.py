@@ -1,6 +1,6 @@
-from auth import authenticate_user
-from gmail_message import list_messages, get_html_from_message
-from scraper import extract_unsubscribe_links
+from services.auth import authenticate_user
+from services.gmail_message import list_messages, get_html_from_message
+from services.scraper import extract_unsubscribe_links
 
 def main():
     service = authenticate_user()

@@ -1,8 +1,8 @@
 import base64
-from auth import authenticate_user
+from services.auth import authenticate_user
 
 
-def list_messages(service,user_id="me",max_results=200):
+def list_messages(service,user_id="me",max_results=20):
   response = service.users().messages().list(
     userId = user_id,
     maxResults = max_results
