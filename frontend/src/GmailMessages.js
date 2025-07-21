@@ -25,22 +25,36 @@ export default function GmailMessage(){
     <div>
       <h2>Gmail Messages with Unsubscribe Links</h2>
       <ul>
-        {messages.map((msg) => (
-          <li key={msg.id}>
-            <p><strong>Message ID:</strong> {msg.id}</p>
-            <ul>
-              {msg.unsubscribe_links.length > 0 ? (
-                msg.unsubscribe_links.map((link, index) => (
-                  <li key={index}>
-                    <a href={link} target="_blank" rel="noopener noreferrer">{link}</a>
-                  </li>
-                ))
-              ) : (
-                <li>No unsubscribe links found.</li>
-              )}
-            </ul>
-          </li>
-        ))}
+				<table> 
+					<thead>
+					<span>Number of Messages:{messages.length}</span>
+					<tr></tr>
+						<td> Message ID:</td>
+						<td> Sender:</td>
+						<td> Subject:</td>
+						<td> Unsubscribe Link:</td>
+					</thead>
+
+					<tbody>
+            {messages.map((msg) => (
+              <tr key={msg.id}>
+                <td>{msg.id}</td>
+                <td>{msg.from}</td>
+                <td>{msg.subject}</td>
+                <td>
+                  {msg.unsubscribe_links.length > 0 ? (
+                    msg.unsubscribe_links.map((link, index) => (
+                      <a key={index} href={link} >Unsubscribe</a>
+                    ))
+                  ) : (
+                    <span>No unsubscribe links found.</span>
+                  )}
+                </td>
+              </tr>
+            ))}
+					</tbody>
+					
+				</table>
       </ul>
     </div>
   );
