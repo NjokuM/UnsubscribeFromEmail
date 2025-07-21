@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from services.gmail_message import list_messages
+from services.gmail_message import list_messages, list_messages_with_links
 from services.auth import authenticate_user
 
 router = APIRouter()
@@ -11,9 +11,11 @@ def get_gmail_messages():
     if not service:
       raise HTTPException(status_code=401, detail="Failed to authenticate with Gmail")
     
-    messages = list_messages(service)
+    messages = list_messages_with_links(service)
     return {"message_count" : len(messages), "messages" : messages}
   
   except Exception as e:
     raise HTTPException(status_code=500, detail=str(e))
   
+
+#@router.get("/messages/{msg_id}")
