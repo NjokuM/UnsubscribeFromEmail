@@ -1,5 +1,5 @@
 import React from 'react';
-import GmailMessage from './GmailMessages';
+import GmailMessage from './Pages/GmailMessages';
 import './App.css';
 
 function App() {

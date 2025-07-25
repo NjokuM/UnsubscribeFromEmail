@@ -1,0 +1,30 @@
+.email-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.2s ease;
+  }
+  
+  .email-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .email-subject {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .email-from {
+    color: #555;
+    margin-bottom: 1rem;
+  }
+  
+  .email-links a {
+    color: #0077cc;
+    text-decoration: underline;
+    word-break: break-word;
+  }
+  
